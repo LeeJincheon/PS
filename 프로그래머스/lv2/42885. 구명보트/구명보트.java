@@ -21,11 +21,9 @@ class Solution {
                 answer++;
                 lt++;
                 rt--;
-            }else{ // 2명을 태울 수 없을 때
-                if(people[rt] <= limit){ // 제일 무거운 사람을 태움
-                    answer++;
-                    rt--;
-                }
+            }else{ // 2명을 태울 수 없을 때 제일 무거운 사람을 태움
+                answer++;
+                rt--;
             }
         }
         

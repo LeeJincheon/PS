@@ -43,6 +43,6 @@ class Solution {
             }
         }
         
-        return map[n-1][m-1]%1000000007;
+        return map[n-1][m-1]%mod;
     }
 }

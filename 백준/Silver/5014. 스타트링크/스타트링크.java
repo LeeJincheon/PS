@@ -17,14 +17,13 @@ public class Main {
 			if(now == G) {
 				System.out.println(cnt[now]);
 				return;
-			}else {
-				for(int i=0; i<2; i++) {
-					int next = now + dx[i];
-					if(next<=F && next>=1 && visited[next]==false) {
-						q.add(next);
+			}
+            for(int i=0; i<2; i++) {
+				int next = now + dx[i];
+				if(next<=F && next>=1 && visited[next]==false) {
+					q.add(next);
 						visited[next] = true;
-						cnt[next] = cnt[now] + 1;
-					}
+					cnt[next] = cnt[now] + 1;
 				}
 			}
 		}

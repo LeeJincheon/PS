@@ -8,12 +8,12 @@ public class Main {
         int n = Integer.parseInt(input[0]);
         int m = Integer.parseInt(input[1]);
 
-        String[] input2 = br.readLine().split(" ");
+        input = br.readLine().split(" ");
         int[] pay = new int[n];
         long[] prefixSum = new long[n];
 
         for(int i=0; i<n; i++) {
-            pay[i] = Integer.parseInt(input2[i]);
+            pay[i] = Integer.parseInt(input[i]);
 
             if(i == 0) {
                 prefixSum[i] = pay[i];

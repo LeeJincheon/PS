@@ -9,12 +9,13 @@ public class Main {
 		
 		for(int i=2; i<=n; i++) {
 			dy[i] = dy[i-1] + 1;
+            if(i%3 == 0) {
+				dy[i] = Math.min(dy[i/3]+1, dy[i]);
+			}
 			if(i%2 == 0) {
 				dy[i] = Math.min(dy[i/2]+1, dy[i]);
 			}
-			if(i%3 == 0) {
-				dy[i] = Math.min(dy[i/3]+1, dy[i]);
-			}
+			
 		}
 		
 		System.out.println(dy[n]);

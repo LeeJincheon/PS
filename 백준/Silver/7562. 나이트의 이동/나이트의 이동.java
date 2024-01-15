@@ -13,7 +13,6 @@ public class Main {
         Queue<Integer> q = new LinkedList<>();
         q.add(x);
         q.add(y);
-        visited[y][x] = 1;
 
         while(!q.isEmpty()) {
             int nowX = q.poll();
@@ -56,7 +55,7 @@ public class Main {
             
             bfs();
 
-            System.out.println(visited[ty][tx]-1);
+            System.out.println(visited[ty][tx]);
         }
 
     } // main

@@ -9,11 +9,11 @@ public class Main {
 
         int cnt = 0;
         for (int i=0; i<n-1; i++) {
-            if (map.charAt(i) != map.charAt(i+1)) {
+            if (map.charAt(i) == 'E' && map.charAt(i+1) == 'W') {
                 cnt++;
             }
         }
 
-        System.out.println((cnt+1)/2);
+        System.out.println(cnt);
     } // main
 }

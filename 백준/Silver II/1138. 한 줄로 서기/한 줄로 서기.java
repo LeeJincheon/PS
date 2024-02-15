@@ -11,7 +11,7 @@ public class Main {
         for (int i=0; i<n; i++) {
             numbers[i] = Integer.parseInt(st.nextToken());
         }
-        List<Integer> list = new ArrayList<>();
+        List<Integer> list = new LinkedList<>();
         for (int i=n; i>0; i--) {
             int pos = numbers[i-1];
             list.add(pos, i);

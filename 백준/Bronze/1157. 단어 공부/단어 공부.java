@@ -1,45 +1,31 @@
+import java.io.*;
 import java.util.*;
+
 public class Main {
-	
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String word = br.readLine().toUpperCase();
 		
-		Map<Character, Integer> alpha = new HashMap<>();
+		Map<Character, Integer> map = new HashMap<>();
+		for (int i=0; i<word.length(); i++) {
+			char c = word.charAt(i);
+			map.put(c, map.getOrDefault(c, 0) + 1);
+		}
+		
+		int maxFreq = 0;
+        char maxChar = '?';
+        boolean isTie = false;
         
-		String str = sc.next();
-		str = str.toUpperCase();
-		
-		for(int i=0; i<str.length(); i++) {
-			if(alpha.containsKey(str.charAt(i))) {
-				alpha.put(str.charAt(i), alpha.get(str.charAt(i))+1);
-			}else {
-				alpha.put(str.charAt(i), 1);
-			}
-		}
-		
-		Set<Character> keys = alpha.keySet();
-		
-		int max = -1;
-		char res = ' ';
-		for(char key : keys) {
-			if(alpha.get(key) > max) {
-				max = alpha.get(key);
-				res = key;
-			}
-		}
-		
-		int cnt = 0;
-		Collection<Integer> values = alpha.values();
-		for(int value : values) {
-			if(value == max) {
-				cnt++;
-			}
-		}
-		
-		if(cnt == 1) {
-			System.out.println(res);
-		}else {
-			System.out.println("?");
-		}
+        for (Map.Entry<Character, Integer> entry : map.entrySet()) {
+            if (entry.getValue() > maxFreq) {
+                maxFreq = entry.getValue();
+                maxChar = entry.getKey();
+                isTie = false;
+            } else if (entry.getValue() == maxFreq) {
+                isTie = true;
+            }
+        }
+        
+        System.out.println(isTie ? "?" : maxChar);
 	}
 }

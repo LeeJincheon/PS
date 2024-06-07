@@ -16,8 +16,6 @@ public class Main {
 		}
 		
 		int idx = 0;
-		int[] result = new int[n];
-		
 		while(idx < n) {
 			int cnt = 0;
 			for (int i=0; i<n; i++) {
@@ -28,16 +26,8 @@ public class Main {
 					cnt++;
 				}
 			}
-			result[idx] = cnt + 1;
 			idx++;
-		}
-		
-		for (int i=0; i<n; i++) {
-			if (i == n-1) {
-				System.out.print(result[i]);
-			} else {
-				System.out.print(result[i] + " ");
-			}
+            System.out.print(cnt+1 + " ");
 		}
 	}
 }

@@ -6,5 +6,5 @@ from animal_ins as ins
 where
     ins.sex_upon_intake like 'Intact%'
     and
-    (outs.sex_upon_outcome like 'Neutered%' or outs.sex_upon_outcome like 'Spayed%')
+    outs.sex_upon_outcome not like 'Intact%'
 order by ins.animal_id;
